@@ -50,7 +50,7 @@ const Locations = () => {
         contentContainerStyle={styles.list}
       />
 
-      {/* Search bar (looks like Apple's, does not search) */}
+      {/* Search bar*/}
       <View style={styles.searchBar}>
         <Ionicons name="search" size={20} color="#D5DBE5" />
         <Text style={styles.searchText}>Search for a city or airport</Text>

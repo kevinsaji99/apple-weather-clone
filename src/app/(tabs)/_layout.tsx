@@ -2,7 +2,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
 import { StyleSheet, View } from "react-native";
 
-// Open on the Weather tab, even though Map is first in the bar
+// Opens on the Weather tab
 export const unstable_settings = {
   initialRouteName: "index",
 };
@@ -41,7 +41,7 @@ const TabLayout = () => {
         }}
       />
 
-      {/* Middle: pill with the location arrow and page dots (opens first) */}
+      {/* Middle: pill with the location arrow and page dots */}
       <Tabs.Screen
         name="index"
         options={{
@@ -70,7 +70,7 @@ const TabLayout = () => {
         name="locations"
         options={{
           title: "Locations",
-          // Hide the bar on this screen: the search bar takes its place
+          // Hides the taskbar on this screen and the search bar takes its place
           tabBarStyle: { display: "none" },
           tabBarIcon: ({ color, focused }) => (
             <View style={[styles.round, focused && styles.roundActive]}>
@@ -80,7 +80,7 @@ const TabLayout = () => {
         }}
       />
 
-      {/* City screen lives in the group (keeps the bar) but has no button of its own */}
+      {/* City screen lives in the group */}
       <Tabs.Screen name="city/[id]" options={{ href: null }} />
     </Tabs>
   );

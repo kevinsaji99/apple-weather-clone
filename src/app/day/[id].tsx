@@ -6,13 +6,13 @@ import InfoRow from "../../components/InfoRow";
 import SectionLabel from "../../components/SectionLabel";
 
 const DayScreen = () => {
-  // The day's id comes from the address (/day/d2); the city comes after the ? (city=tokyo)
+  // The day's id comes from the address
   const { id, city: cityId } = useLocalSearchParams<{
     id: string;
     city: string;
   }>();
 
-  // Find the city, then the day inside it — .filter from Week 5 Day 1, twice
+  // Find the city, then the day inside it
   const cityMatches = cities.filter((city) => city.id === cityId);
   if (cityMatches.length === 0) {
     return (
@@ -38,7 +38,7 @@ const DayScreen = () => {
       style={[styles.screen, { backgroundColor: city.color }]}
       contentContainerStyle={styles.content}
     >
-      {/* Header title and colour from the data (Week 6 Day 1, Part 7) */}
+      {/* Header title and colour from the data */}
       <Stack.Screen
         options={{
           title: `${city.name} · ${day.day}`,

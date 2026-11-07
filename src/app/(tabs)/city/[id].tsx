@@ -10,7 +10,6 @@ const CityScreen = () => {
   const { id } = useLocalSearchParams<{ id: string }>();
   const router = useRouter();
 
-  // .filter from Week 5 Day 1: keep only the city whose id matches the address
   const matches = cities.filter((city) => city.id === id);
 
   if (matches.length === 0) {
@@ -23,7 +22,6 @@ const CityScreen = () => {
 
   const city = matches[0];
 
-  // Push the Day Detail screen onto the Stack (Week 6 Day 1, Part 5)
   const openDay = (dayId: string) => {
     router.push({
       pathname: "/day/[id]",
@@ -62,7 +60,7 @@ const CityScreen = () => {
               low={city.low}
             />
 
-            {/* Conditions card with a sideways hourly strip (Week 4 Day 2, Part 9) */}
+            {/* Conditions card with a sideways hourly strip*/}
             <View style={[styles.card, { backgroundColor: city.cardColor }]}>
               <Text style={styles.cardTitle}>Conditions</Text>
               <Text style={styles.cardSubtitle}>Temperature (°C)</Text>
@@ -82,7 +80,7 @@ const CityScreen = () => {
               />
             </View>
 
-            {/* Top of the forecast box; the day rows below continue it */}
+            {/* Top of the forecast box*/}
             <View style={[styles.dayTop, { backgroundColor: city.cardColor }]}>
               <SectionLabel label="5-DAY FORECAST" />
             </View>
